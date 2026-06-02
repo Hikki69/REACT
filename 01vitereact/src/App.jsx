@@ -1,15 +1,18 @@
 
 
-
+import Code from "./code"
 
 
 function App() {
   
 
   return (
-    <h1>
-      garmi and react with vite
-    </h1>
+    <>
+    <Code/>
+    <h1>grami and react</h1>
+    <p>test para</p>
+    </>
+    
   )
 }
 

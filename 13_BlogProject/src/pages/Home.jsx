@@ -7,7 +7,7 @@ function Home(){
     useEffect(()=>{
         appwriteService.getPost([]).then((post)=>{
             if(post){
-                setPost(post.decuments)
+                setPost(post.documents)
             }
         })
     },[])

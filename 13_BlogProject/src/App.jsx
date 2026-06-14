@@ -1,5 +1,6 @@
 import React,{ useState,useEffect } from 'react'
 import {useDispatch} from 'react-redux'
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import authService from './appwrite/auth'
 import {login,logout} from './store/authSlice'
@@ -19,15 +20,19 @@ function App() {
         dispatch(logout())
       }
     })
+    .catch((error)=>{
+      console.log("Not logged in", error)
+      dispatch(logout())
+    })
     .finally(()=>setLoading(false))
   },[])
 
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap content-between bg-pink-400'>
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
       <div className='w-full block'>
         <Header/>
         <main>
-          TODO: {/* <Outlet/> */}
+          <Outlet />
         </main>
         <Footer/>
       </div>
